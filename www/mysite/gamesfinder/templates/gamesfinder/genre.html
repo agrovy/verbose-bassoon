@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <title>gamesfinder.com</title>
+</head>
+<style>
+  .cheight {  
+    height: 7in;
+    
+  }
+
+</style>
+<body>
+  {%include 'gamesfinder/topnav.html' %}
+  <section class="section">
+  
+  <div class="columns is-multiline">
+    {% for game in genre.game_set.all %}
+      <div class="column is-2 ">
+        <div class="card cheight">
+            <div class="card-image">
+              <figure class="image is-4by3">
+              <img src="{{game.image.url}}"  alt="Placeholder image">
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                
+                <div class="media-content">
+                  <p class="title is-4">{{game.title}}</p>
+                  <p class="subtitle is-6">{{game.rating}}</p>
+                </div>
+              </div>
+          
+              <div class="content">
+                <p><a href="{% url 'gamesfinder:gamepage' game.id %}">Click to see gamepage</a></p>
+                <br> 
+                <p>{{game.description|slice:":100"}}...</p>
+                <br>
+                <time datetime="{{game.release_date}}">Released on {{game.release_date}}</time>
+              </div>
+            </div>
+          </div>
+      </div>
+  
+{% endfor %}
+  </div>
+    
+</section>
+</body>

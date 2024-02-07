@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+ 
+</head>
+
+<body>
+  
+<section class="section">
+  
+    <div class="columns">
+      <div class="column">
+        <h2 class="title">Login</h2>
+        <form action="{% url 'gamesfinder:login' %}" method="post" class="box">
+          {% csrf_token %}
+          <div class="field">
+            <label class="label">Username</label>
+            <div class="control">
+              <input class="input" type="text" name="username" placeholder ="Enter your username">
+            </div>
+          </div>
+  
+          <div class="field">
+            <label class="label">Password</label>
+            <div class="control">
+              <input class="input" type="password" name="password" placeholder="********">
+            </div>
+          </div>
+  
+          <button class="button is-primary">Login</button>
+        </form>
+     
+     
+     
+     
+      </div>
+      <div class="column">
+        <h2 class="title">Sign up</h2>
+        <form action = "{% url 'gamesfinder:register' %}" method="post" class="box">
+          {% csrf_token %}
+          <div class="field">
+            <label class="label">Username</label>
+            <div class="control">
+              <input class="input" type="username" name="username" id="" placeholder="Make a username">
+            </div>
+          </div>
+        
+          <div class="field">
+            <label class="label">Password</label>
+            <div class="control">
+              <input class="input" type="password" name="password" id="" placeholder="Make a strong password">
+            </div>
+          </div>
+        
+          <button class="button is-primary">Sign Up</button>
+        </form>
+      </div>
+    </div>
+  
+   
+ 
+  
+  
+</section>
+
+
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="{% url 'gamesfinder:homepage' %}">
+        <h1 class="title">Gamesfinder.com</h1>
+      </a>
+  
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+  
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="{% url 'gamesfinder:genres' %}">Looking for a specific genre?</a>
+      </div>
+  
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a href="{% url 'gamesfinder:logout' %}" class="button is-primary is-light">
+              Logout
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
